@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.DocSnapPro" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.DocSnapPro.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_screen</item>
+        <item name="postSplashScreenTheme">@style/Theme.DocSnapPro</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/white</item>
+    </style>
 </resources>
