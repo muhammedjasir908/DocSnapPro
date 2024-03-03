@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570632347215",
+    "project_id": "docsnap-pro",
+    "storage_bucket": "docsnap-pro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570632347215:android:efcd45ea51bf442c6f943a",
+        "android_client_info": {
+          "package_name": "com.muhammedjasir.docsnappro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9KODFHO3aFm8dCMcR6gTtzHKNrqVAFiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,67 @@
 <resources>
     <string name="app_name">DocSnap Pro</string>
+
+    <string name="app_version">V 1.0.1</string>
+    <string name="onboarding_1_title">Scan Anything</string>
+    <string name="onboarding_1_sub_title">Scan any size of documents and crop them according to your needs</string>
+    <string name="onboarding_2_title">OCR Scanning</string>
+    <string name="onboarding_2_sub_title">Scan any image with OCR and copy the text with just one click</string>
+    <string name="onboarding_3_title">Share instantly</string>
+    <string name="onboarding_3_sub_title">Scan,crop,edit,etc.Do what ever you want and then share the files with just a click.</string>
+    <string name="skip">SKIP</string>
+    <string name="next">NEXT</string>
+
+    <string name="google">Continue with Google</string>
+    <string name="facebook">Continue with Facebook</string>
+    <string name="apple">Continue with Apple</string>
+    <string name="or">or</string>
+    <string name="sign_in_with_password">Sign in with password</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+
+    <string name="create_an_account">Create an account</string>
+    <string name="create_an_account_sub_text">Register to get started.</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="finish">Finish</string>
+
+    <string name="sign_up_successfully">Sign up successfully</string>
+    <string name="account_created">Your account has been created</string>
+    <string name="go_to_home">Go to home</string>
+
+    <string name="hello_there">Hello there</string>
+    <string name="sign_in_sub_text">Please enter your email &amp; password for sign in.</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="or_continue">or continue with</string>
+    <string name="sign_in">Sign in</string>
+
+    <string name="forgot_password_sub_text">Enter your email address.We will send an OTP code for verification in the next step.</string>
+    <string name="continue_str">Continue</string>
+
+    <string name="you_have_got_mail">You\'ve got mail</string>
+    <string name="otp_verification_sub_text">We have sent the OTP verification code to your email address. Check your email and enter the code below.</string>
+    <string name="didnt_receive_email">Didn\'t receive email?</string>
+    <string name="send_code_text">You can resend code in</string>
+    <string name="resend_otp">Resend OTP</string>
+
+    <string name="create_new_password">Create new password</string>
+    <string name="create_new_password_sub_text">Enter your new password.If you forget it,then you have to do forgot password.</string>
+
+    <string name="reset_password_success">Reset password successfully</string>
+    <string name="reset_password_success_sub_text">Your password has been successfully changed.</string>
+
+    <string name="home">Home</string>
+    <string name="file">Files</string>
+    <string name="tools">Tools</string>
+    <string name="account">Account</string>
+
+    <string name="recent_files">Recent files</string>
+    <string name="convert">Convert</string>
+    <string name="edit">Edit</string>
+    <string name="other">Other</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
