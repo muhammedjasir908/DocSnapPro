@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.DocSnapPro" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.DocSnapPro" parent="android:Theme.Material.Light.NoActionBar" >
+    <item name="android:windowTranslucentStatus">
+        false
+    </item>
+    <item name="android:statusBarColor">
+        @color/black
+    </item>
+    </style>
 
     <style name="Theme.DocSnapPro.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@android:color/white</item>
