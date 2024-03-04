@@ -39,6 +39,7 @@
 
     <string name="forgot_password_sub_text">Enter your email address.We will send an OTP code for verification in the next step.</string>
     <string name="continue_str">Continue</string>
+    <string name="confirm_str">Confirm</string>
 
     <string name="you_have_got_mail">You\'ve got mail</string>
     <string name="otp_verification_sub_text">We have sent the OTP verification code to your email address. Check your email and enter the code below.</string>

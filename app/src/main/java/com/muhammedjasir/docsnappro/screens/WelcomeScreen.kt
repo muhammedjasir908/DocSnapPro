@@ -31,12 +31,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.muhammedjasir.docsnappro.R
+import com.muhammedjasir.docsnappro.navigation.Screens
 import com.muhammedjasir.docsnappro.ui.theme.Navy
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
-fun WelcomeScreen(){
+fun WelcomeScreen(navController: NavController){
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -69,9 +71,9 @@ fun WelcomeScreen(){
             Spacer(modifier = Modifier.height(height = 20.dp))
             DividerComponent()
             Spacer(modifier = Modifier.height(height = 20.dp))
-            SignInButtonComponent()
+            SignInButtonComponent(onClick = {navController.navigate(Screens.SignInScreen.route)})
             Spacer(modifier = Modifier.height(height = 10.dp))
-            SignUpTextButtonComponent()
+            SignUpTextButtonComponent(onClick = {navController.navigate(Screens.SignUpScreen.route)})
             Spacer(modifier = Modifier.height(height = 10.dp))
         }
     }
@@ -121,26 +123,30 @@ fun DividerComponent(){
 }
 
 @Composable
-fun SignInButtonComponent(){
+fun SignInButtonComponent(
+    onClick: () -> Unit
+){
     Button(
         modifier = Modifier
             .width(width = 300.dp)
             .height(height = 55.dp),
         colors = ButtonDefaults.buttonColors(Navy),
-        onClick = { /*TODO*/ }) {
+        onClick = onClick) {
         Text(text = "Sign in with password", fontFamily = comfortaaFont)
     }
 }
 
 @Composable
-fun SignUpTextButtonComponent(){
+fun SignUpTextButtonComponent(
+    onClick: () -> Unit
+){
   Row(
       modifier = Modifier,
       horizontalArrangement = Arrangement.Center,
       verticalAlignment = Alignment.CenterVertically
   ) {
       Text(text = "Don't have an account?", fontFamily = comfortaaFont)
-      TextButton(onClick = { /*TODO*/ }) {
+      TextButton(onClick = onClick) {
           Text(text = "Sign Up", fontFamily = comfortaaFont, color = Navy)
       }
   }
