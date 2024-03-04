@@ -4,13 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.muhammedjasir.docsnappro.screens.CreatePasswordScreen
-import com.muhammedjasir.docsnappro.screens.ForgotPasswordScreen
 import com.muhammedjasir.docsnappro.screens.HomeScreen
-import com.muhammedjasir.docsnappro.screens.OTPValidationScreen
-import com.muhammedjasir.docsnappro.screens.SignInScreen
-import com.muhammedjasir.docsnappro.screens.SignUpScreen
-import com.muhammedjasir.docsnappro.screens.WelcomeScreen
 
 @Composable
 fun AppNavigationGraph(){
