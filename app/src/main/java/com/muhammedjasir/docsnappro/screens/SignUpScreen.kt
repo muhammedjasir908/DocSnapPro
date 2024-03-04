@@ -1,41 +1,39 @@
 package com.muhammedjasir.docsnappro.screens
 
-import android.graphics.drawable.Icon
-import android.graphics.drawable.PaintDrawable
-import android.text.Layout
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material3.Icon
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.*
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.muhammedjasir.docsnappro.R
+import com.muhammedjasir.docsnappro.ui.theme.Navy
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
@@ -44,13 +42,12 @@ fun SignUpScreen(){
         modifier = Modifier
             .fillMaxSize()
             .padding(
-                10.dp
+                horizontal = 10.dp, vertical = 20.dp
             )
-    ) { innerPadding ->
+    ) {innerPadding ->
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
+                .fillMaxSize().padding(innerPadding),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top
         ) {
@@ -66,7 +63,7 @@ fun SignUpScreen(){
                 style = TextStyle(
                     fontFamily = comfortaaFont,
                     fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
                 ),
                )
             Spacer(modifier = Modifier.height(height = 10.dp))
@@ -77,53 +74,101 @@ fun SignUpScreen(){
                     fontSize = 14.sp,
                 ),
             )
-            Spacer(modifier = Modifier.height(height = 10.dp))
+            Spacer(modifier = Modifier.height(height = 20.dp))
             Text(
+                modifier = Modifier.padding(horizontal = 10.dp),
                 text = stringResource(id = R.string.email_hint),
                 style = TextStyle(
                     fontFamily = comfortaaFont,
                     fontSize = 10.sp,
                 ),
             )
-            CustomTextFieldComponent(labelValue = "Email")
-            Spacer(modifier = Modifier.height(height = 10.dp))
+            CustomTextFieldComponent()
+            Spacer(modifier = Modifier.height(height = 20.dp))
             Text(
+                modifier = Modifier.padding(horizontal = 10.dp),
                 text = stringResource(id = R.string.password_hint),
                 style = TextStyle(
                     fontFamily = comfortaaFont,
-                    fontSize = 0.sp,
+                    fontSize = 10.sp,
                 ),
             )
-            CustomTextFieldComponent(labelValue = "Password")
-            Spacer(modifier = Modifier.height(height = 10.dp))
+            CustomTextFieldComponent()
+            Spacer(modifier = Modifier.height(height = 20.dp))
             Text(
+                modifier = Modifier.padding(horizontal = 10.dp),
                 text = stringResource(id = R.string.confirm_password_hint),
                 style = TextStyle(
                     fontFamily = comfortaaFont,
                     fontSize = 10.sp,
                 ),
             )
-            CustomTextFieldComponent(labelValue = "Confirm password")
+            CustomTextFieldComponent()
+            Spacer(modifier = Modifier.height(height = 20.dp))
+            CheckBoxComponent()
+            Spacer(modifier = Modifier.height(height = 40.dp))
+            CustomButtonComponent()
         }
     }
 }
 
 @Composable
-fun CustomTextFieldComponent(
-    labelValue: String,
-
-){
+fun CustomTextFieldComponent() {
     var textValue by remember {
         mutableStateOf("")
     }
     TextField(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.Transparent)
             .padding(horizontal = 10.dp),
+        colors = TextFieldDefaults.colors(
+            unfocusedContainerColor = Color.Transparent,
+            focusedContainerColor = Color.Transparent),
         value = textValue,
         onValueChange = {
             textValue = it
 
         })
+}
+
+@Composable
+fun CheckBoxComponent(){
+    val (checkedState, onStateChange) = remember { mutableStateOf(false) }
+    Row(
+        Modifier
+            .fillMaxWidth()
+            .height(56.dp)
+//            .toggleable(
+//                value = checkedState,
+//                onValueChange = { onStateChange(!checkedState) },
+//                role = Role.Checkbox
+//            )
+            .padding(horizontal = 16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(
+            checked = checkedState,
+            onCheckedChange = {onStateChange(!checkedState)
+            }
+        )
+        Text(
+            text = "Remember me",
+            modifier = Modifier.padding(start = 16.dp)
+        )
+    }
+}
+
+@Composable
+fun CustomButtonComponent(){
+    Button(
+        modifier = Modifier.fillMaxWidth()
+            .height(height = 55.dp).padding(horizontal = 20.dp),
+        colors = ButtonDefaults.buttonColors(containerColor = Navy),
+        onClick = {  }) {
+        Text(text = "Finish", style = TextStyle(
+            fontFamily = comfortaaFont,
+            fontSize = 14.sp,
+            color = Color.White
+        ))
+    }
 }
