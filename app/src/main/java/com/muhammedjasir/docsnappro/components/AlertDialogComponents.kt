@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -19,7 +18,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -35,7 +33,7 @@ fun SignUpDialog(
 ){
     AlertDialog(
         onDismissRequest = onDismiss,
-        confirmButton = { /*TODO*/ },
+        confirmButton = {  },
         modifier = Modifier.height(300.dp),
         text = {
             Column(
@@ -69,7 +67,7 @@ fun SignUpDialog(
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Navy
                     ),
-                    onClick = { /*TODO*/ }) {
+                    onClick = {  }) {
                     Text(text = stringResource(id = R.string.go_to_home),
                         style = TextStyle(
                             fontSize = 10.sp,
