@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.muhammedjasir.docsnappro.R
 import com.muhammedjasir.docsnappro.components.CustomFilledButtonComponent
+import com.muhammedjasir.docsnappro.navigation.Screens
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
@@ -51,7 +52,7 @@ fun OTPValidationScreen(navController: NavController){
         ) {
             IconButton(
                 modifier = Modifier.size(35.dp),
-                onClick = {  }) {
+                onClick = { navController.popBackStack() }) {
                 Icon(imageVector = Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "")
             }
             Spacer(modifier = Modifier.height(30.dp))
@@ -72,7 +73,7 @@ fun OTPValidationScreen(navController: NavController){
             Spacer(modifier = Modifier.height(20.dp))
             OTPTextFieldRowComponent()
             Spacer(modifier = Modifier.height(20.dp))
-            CustomFilledButtonComponent(onClick = {  }, text = stringResource(id = R.string.confirm_str))
+            CustomFilledButtonComponent(onClick = { navController.navigate(Screens.CreatePassword.route) }, text = stringResource(id = R.string.confirm_str))
         }
     }
 }

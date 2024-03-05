@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -57,7 +56,7 @@ fun SignInScreen(navController: NavController){
         ) {
             IconButton(
                 modifier = Modifier.size(35.dp),
-                onClick = {  }) {
+                onClick = { navController.popBackStack() }) {
                 Icon(imageVector = Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "")
             }
             Spacer(modifier = Modifier.height(30.dp))
@@ -88,7 +87,7 @@ fun SignInScreen(navController: NavController){
                 thickness = 2.dp
             )
             TextButton(
-                onClick = {  }) {
+                onClick = { navController.navigate(Screens.ForgotPassword.route) }) {
                 Text(
                     modifier = Modifier.fillMaxWidth(),
                     text = stringResource(id = R.string.forgot_password),
@@ -104,7 +103,7 @@ fun SignInScreen(navController: NavController){
             SignInServicesComponent()
             Spacer(modifier = Modifier.height(height = 20.dp))
             CustomFilledButtonComponent(onClick = {
-                navController.navigate(Screens.ForgotPasswordScreen.route)
+                navController.navigate(Screens.Home.route)
                                                   }, text = stringResource(id = R.string.sign_in))
         }
     }
@@ -120,10 +119,8 @@ fun SignInServicesComponent(){
         horizontalArrangement = Arrangement.Center
     ) {
         IconOutlineButtonComponent(imageId = R.drawable.google_logo)
-        Spacer(modifier = Modifier.width(5.dp))
+        Spacer(modifier = Modifier.width(10.dp))
         IconOutlineButtonComponent(imageId = R.drawable.facebook_logo)
-        Spacer(modifier = Modifier.width(5.dp))
-        IconOutlineButtonComponent(imageId = R.drawable.apple_logo)
     }
 }
 
@@ -133,13 +130,14 @@ fun IconOutlineButtonComponent(
 ){
     OutlinedButton(
         modifier = Modifier
-            .width(width = 100.dp)
+            .width(width = 150.dp)
             .height(height = 55.dp),
         border = BorderStroke(width = 2.dp, color = Navy),
         onClick = { }) {
         Image(
+            modifier = Modifier.size(width = 25.dp, height = 35.dp),
             painter = painterResource(id = imageId),
-            contentDescription = "",
-            modifier = Modifier.size(ButtonDefaults.IconSize))
+            contentDescription = "",)
+//            modifier = Modifier.size(ButtonDefaults.IconSize))
     }
 }

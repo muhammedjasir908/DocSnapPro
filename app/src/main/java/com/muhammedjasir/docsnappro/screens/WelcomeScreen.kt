@@ -64,14 +64,12 @@ fun WelcomeScreen(navController: NavController){
             CustomAuthServiceButtonComponent(imageId = R.drawable.google_logo, text = "Continue with Google")
             Spacer(modifier = Modifier.height(height = 10.dp))
             CustomAuthServiceButtonComponent(imageId = R.drawable.facebook_logo, text = "Continue with Facebook")
-            Spacer(modifier = Modifier.height(height = 10.dp))
-            CustomAuthServiceButtonComponent(imageId = R.drawable.apple_logo, text = "Continue with Apple")
             Spacer(modifier = Modifier.height(height = 20.dp))
             DividerComponent()
             Spacer(modifier = Modifier.height(height = 20.dp))
-            SignInButtonComponent(onClick = {navController.navigate(Screens.SignInScreen.route)})
+            SignInButtonComponent(onClick = {navController.navigate(Screens.SignIn.route)})
             Spacer(modifier = Modifier.height(height = 10.dp))
-            SignUpTextButtonComponent(onClick = {navController.navigate(Screens.SignUpScreen.route)})
+            SignUpTextButtonComponent(onClick = {navController.navigate(Screens.SignUp.route)})
             Spacer(modifier = Modifier.height(height = 10.dp))
         }
     }

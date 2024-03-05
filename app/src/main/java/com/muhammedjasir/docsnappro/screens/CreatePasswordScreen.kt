@@ -29,6 +29,7 @@ import com.muhammedjasir.docsnappro.components.CustomAuthTextFieldComponent
 import com.muhammedjasir.docsnappro.components.CustomFilledButtonComponent
 import com.muhammedjasir.docsnappro.components.CustomRememberMeComponent
 import com.muhammedjasir.docsnappro.components.SignUpDialog
+import com.muhammedjasir.docsnappro.navigation.Screens
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
@@ -38,7 +39,10 @@ fun CreatePasswordScreen(navController: NavController){
     }
 
     if(showSuccessDialog){
-        SignUpDialog(onDismiss = {showSuccessDialog = false})
+        SignUpDialog(onDismiss = {
+            showSuccessDialog = false
+            navController.navigate(Screens.Home.route)
+        })
     }
 
     Scaffold(

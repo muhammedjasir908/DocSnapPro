@@ -30,6 +30,7 @@ import com.muhammedjasir.docsnappro.components.CustomAuthTextFieldComponent
 import com.muhammedjasir.docsnappro.components.CustomFilledButtonComponent
 import com.muhammedjasir.docsnappro.components.CustomRememberMeComponent
 import com.muhammedjasir.docsnappro.components.SignUpDialog
+import com.muhammedjasir.docsnappro.navigation.Screens
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
@@ -39,7 +40,10 @@ fun SignUpScreen(navController: NavController){
     }
 
     if(showSuccessDialog){
-        SignUpDialog(onDismiss = {showSuccessDialog = false})
+        SignUpDialog(onDismiss = {
+            showSuccessDialog = false
+        navController.navigate(Screens.Home.route)
+        })
     }
 
     Scaffold(
@@ -58,7 +62,7 @@ fun SignUpScreen(navController: NavController){
         ) {
             IconButton(
                 modifier = Modifier.size(30.dp),
-                onClick = { /*TODO*/ }) {
+                onClick = { navController.popBackStack() }) {
                 androidx.compose.material3.Icon(
                     imageVector = Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "")
             }

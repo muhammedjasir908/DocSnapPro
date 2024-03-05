@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import com.muhammedjasir.docsnappro.R
 import com.muhammedjasir.docsnappro.components.CustomAuthTextFieldComponent
 import com.muhammedjasir.docsnappro.components.CustomFilledButtonComponent
+import com.muhammedjasir.docsnappro.navigation.Screens
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
@@ -39,7 +40,7 @@ fun ForgotPasswordScreen(navController: NavController){
         ) {
             IconButton(
                 modifier = Modifier.size(35.dp),
-                onClick = {  }) {
+                onClick = { navController.popBackStack() }) {
                 Icon(imageVector = Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "")
             }
             Spacer(modifier = Modifier.height(30.dp))
@@ -60,7 +61,7 @@ fun ForgotPasswordScreen(navController: NavController){
             Spacer(modifier = Modifier.height(30.dp))
             CustomAuthTextFieldComponent(hint = stringResource(id = R.string.email_hint), space = 20)
             Spacer(modifier = Modifier.height(30.dp))
-            CustomFilledButtonComponent(onClick = { }, text = stringResource(id = R.string.continue_str))
+            CustomFilledButtonComponent(onClick = { navController.navigate(Screens.OTPValidation.route)}, text = stringResource(id = R.string.continue_str))
         }
     }
 }

@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -16,8 +17,10 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowForward
+import androidx.compose.material.icons.rounded.AccountCircle
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardColors
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
@@ -33,18 +36,36 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.muhammedjasir.docsnappro.R
+import com.muhammedjasir.docsnappro.components.FilesCardComponent
 import com.muhammedjasir.docsnappro.ui.theme.Navy
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
-fun HomeScreen(navController: NavController){
+fun HomeScreen(navController: NavHostController){
 
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
-            .padding(10.dp),
+            .padding(0.dp),
+        floatingActionButton = {
+            Row {
+                FloatingActionButton(
+                    modifier = Modifier.size(width = 50.dp, height = 50.dp),
+                    shape = CircleShape,
+                    onClick = {  }) {
+                    Icon(imageVector = Icons.Rounded.AccountCircle, contentDescription = "")
+                }
+                Spacer(modifier = Modifier.width(5.dp))
+                FloatingActionButton(
+                    modifier = Modifier.size(width = 50.dp, height = 50.dp),
+                    shape = CircleShape,
+                    onClick = {  }) {
+                    Icon(imageVector = Icons.Rounded.AccountCircle, contentDescription = "")
+                }
+            }
+        }
     ) {innerPadding ->
         Column(
             modifier = Modifier
@@ -113,7 +134,12 @@ fun HomeScreen(navController: NavController){
                     Icon(imageVector = Icons.AutoMirrored.Rounded.ArrowForward, contentDescription = "")
                 }
             }
+            Spacer(modifier = Modifier.height(10.dp))
+            FilesCardComponent()
+            FilesCardComponent()
+            FilesCardComponent()
         }
 
     }
 }
+
