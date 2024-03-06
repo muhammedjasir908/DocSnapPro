@@ -63,7 +63,22 @@
     <string name="edit">Edit</string>
     <string name="other">Other</string>
     
-    <string name="scan">Scan</string>
+    <string name="scan_docs">Documents</string>
+    <string name="id_maker">ID Photo</string>
+    <string name="image_to_text">Extract Text</string>
+    <string name="signature">Signature</string>
+    <string name="scan_book">Scan Book</string>
+    <string name="translate_text">Translate</string>
+    <string name="scan_qr_code">QR Code</string>
+    
+    <string name="merge_tools">Merge</string>
+    <string name="split_tools">Split</string>
+    <string name="pdf_to_doc">PDF to DOC</string>
+    <string name="pdf_to_excel">PDF to Excel</string>
+    <string name="pdf_to_image">PDF to Image</string>
+    <string name="doc_to_pdf">DOC to PDF</string>
+    <string name="excel_to_pdf">Excel to PDF</string>
+    <string name="page_reorder">Page Reorder</string>
     <string name="watermark">Watermark</string>
 
 </resources>

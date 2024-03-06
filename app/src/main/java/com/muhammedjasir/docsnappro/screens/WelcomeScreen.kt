@@ -47,11 +47,11 @@ fun WelcomeScreen(navController: NavController){
         ) {
             Image(
                 modifier = Modifier
-                    .width(100.dp)
-                    .height(100.dp),
+                    .width(150.dp)
+                    .height(150.dp),
                 painter = painterResource(id = R.drawable.app_icon),
                 contentDescription = "")
-            Spacer(modifier = Modifier.height(height = 10.dp))
+            Spacer(modifier = Modifier.height(height = 20.dp))
             Text(
                 text = stringResource(id = R.string.app_name),
                 style = TextStyle(
@@ -60,7 +60,7 @@ fun WelcomeScreen(navController: NavController){
                     fontWeight = FontWeight.Bold
                 )
             )
-            Spacer(modifier = Modifier.height(height = 10.dp))
+            Spacer(modifier = Modifier.height(height = 20.dp))
             CustomAuthServiceButtonComponent(imageId = R.drawable.google_logo, text = "Continue with Google")
             Spacer(modifier = Modifier.height(height = 10.dp))
             CustomAuthServiceButtonComponent(imageId = R.drawable.facebook_logo, text = "Continue with Facebook")
@@ -85,11 +85,11 @@ fun CustomAuthServiceButtonComponent(
             .width(width = 300.dp)
             .height(height = 55.dp),
         border = BorderStroke(width = 2.dp, color = Navy),
-        onClick = { /*TODO*/ }) {
+        onClick = {  }) {
         Image(
             painter = painterResource(id = imageId),
             contentDescription = "",
-            modifier = Modifier.size(ButtonDefaults.IconSize))
+            modifier = Modifier.size(width = 30.dp, height = 30.dp))
         Spacer(
             modifier = Modifier.size(ButtonDefaults.IconSize))
         Text(text = text, textAlign = TextAlign.Center, fontFamily = comfortaaFont, color = Color.Black)

@@ -27,11 +27,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.muhammedjasir.docsnappro.R
+import androidx.navigation.NavController
+import com.muhammedjasir.docsnappro.screens.RecentFilesData
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
 @Composable
-fun FilesCardComponent(){
+fun FilesCardComponent(data: RecentFilesData, navController: NavController){
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -41,7 +42,7 @@ fun FilesCardComponent(){
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Image(painter = painterResource(id = R.drawable.document_image), contentDescription = "", modifier = Modifier
+            Image(painter = painterResource(id = data.image), contentDescription = "", modifier = Modifier
                 .width(60.dp)
                 .height(90.dp))
             Spacer(modifier = Modifier.width(10.dp))
@@ -50,13 +51,13 @@ fun FilesCardComponent(){
                 horizontalAlignment = Alignment.Start,
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "Document -1", style = TextStyle(
+                Text(text = data.title, style = TextStyle(
                     fontWeight = FontWeight.Bold,
                     fontFamily = comfortaaFont,
                     fontSize = 18.sp
                 )
                 )
-                Text(text = "05-03-2024 12:58 pm", style = TextStyle(
+                Text(text = data.date, style = TextStyle(
                     fontSize = 10.sp,
                     fontFamily = comfortaaFont
                 )
