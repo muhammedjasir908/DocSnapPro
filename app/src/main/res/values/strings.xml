@@ -59,26 +59,42 @@
     <string name="account">Account</string>
 
     <string name="recent_files">Recent files</string>
+
+    <string name="scan">Scan</string>
     <string name="convert">Convert</string>
     <string name="edit">Edit</string>
     <string name="other">Other</string>
-    
-    <string name="scan_docs">Documents</string>
-    <string name="id_maker">ID Photo</string>
-    <string name="image_to_text">Extract Text</string>
-    <string name="signature">Signature</string>
-    <string name="scan_book">Scan Book</string>
-    <string name="translate_text">Translate</string>
+
+    <string name="scan_docs">Scan Documents</string>
+    <string name="scan_image_to_text">Scan Image to Text</string>
+    <string name="scan_photo">Scan Photo</string>
+    <string name="scan_image_to_pdf">Scan Image to PDF</string>
+    <string name="scan_image_to_word">Scan Image to Word</string>
+    <string name="scan_image_to_excel">Scan Image to Excel</string>
     <string name="scan_qr_code">QR Code</string>
-    
-    <string name="merge_tools">Merge</string>
-    <string name="split_tools">Split</string>
-    <string name="pdf_to_doc">PDF to DOC</string>
-    <string name="pdf_to_excel">PDF to Excel</string>
+
+    <string name="pdf_to_doc">PDF Export to Images</string>
+    <string name="pdf_to_excel">PDF to Long Image</string>
     <string name="pdf_to_image">PDF to Image</string>
-    <string name="doc_to_pdf">DOC to PDF</string>
+    <string name="doc_to_pdf">Word to PDF</string>
     <string name="excel_to_pdf">Excel to PDF</string>
-    <string name="page_reorder">Page Reorder</string>
-    <string name="watermark">Watermark</string>
+    <string name="image_to_pdf">Image to PDF</string>
+    <string name="image_to_word">Image to Word</string>
+    <string name="image_to_excel">Image to Excel</string>
+    <string name="image_to_text">Image to Text</string>
+
+    <string name="pdf_merge">Merge PDF</string>
+    <string name="split_tools">Split PDF</string>
+    <string name="pdf_sign">PDF Signature</string>
+    <string name="pdf_watermark">PDF Watermark</string>
+    <string name="pdf_extract">PDF Extract</string>
+    <string name="pdf_page_reorder">PDF Page Reorder</string>
+    <string name="pdf_password">PDF Password</string>
+    <string name="pdf_unlock">PDF Unlock</string>
+    <string name="rotate_pdf">Rotate PDF</string>
+    <string name="edit_pdf">Edit PDF</string>
+    <string name="edit_word">Edit Word</string>
+    <string name="edit_excel">Edit Excel</string>
+
 
 </resources>

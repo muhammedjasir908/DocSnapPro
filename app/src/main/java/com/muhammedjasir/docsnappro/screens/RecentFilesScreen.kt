@@ -4,16 +4,25 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Surface
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.muhammedjasir.docsnappro.R
 import com.muhammedjasir.docsnappro.components.FilesCardComponent
+import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RecentFilesScreen(navController: NavHostController){
 
@@ -32,10 +41,26 @@ fun RecentFilesScreen(navController: NavHostController){
         RecentFilesData(id = 12, image = R.drawable.document_image, title = "Document - 12", date = "12-03-2024 12:00 PM")
     )
 
-    Surface(
-        modifier = Modifier.fillMaxSize()
-    ) {
-        Column {
+    Scaffold(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(0.dp),
+        topBar = {
+            TopAppBar(title = {
+                Text(text = stringResource(id = R.string.app_name), style = TextStyle(
+                    fontFamily = comfortaaFont,
+                    fontSize = 12.sp,
+                ),
+                    modifier = Modifier.padding(horizontal = 10.dp)
+                )
+            })
+        }
+    ) {innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
             Spacer(modifier = Modifier.height(10.dp))
             LazyColumn {
                 items(recentFilesList){data ->

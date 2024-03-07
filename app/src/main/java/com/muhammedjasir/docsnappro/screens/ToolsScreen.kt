@@ -38,25 +38,41 @@ import com.muhammedjasir.docsnappro.ui.theme.pinkGrey
 
 @Composable
 fun ToolsScreen(navController: NavHostController){
-    val toolsList: List<ToolsGridItem> = listOf(
+    val scanItemList: List<ToolsGridItem> = listOf(
         ToolsGridItem(id = 1, toolsText = R.string.scan_docs, image = R.drawable.scan_docs),
-        ToolsGridItem(id = 2, toolsText = R.string.id_maker, image = R.drawable.id_maker),
-        ToolsGridItem(id = 3, toolsText = R.string.signature, image = R.drawable.scan_sign),
-        ToolsGridItem(id = 4, toolsText = R.string.scan_book, image = R.drawable.scan_book),
-        ToolsGridItem(id = 5, toolsText = R.string.translate_text, image = R.drawable.translate_text),
-        ToolsGridItem(id = 6, toolsText = R.string.scan_qr_code, image = R.drawable.scan_qr_code)
+        ToolsGridItem(id = 2, toolsText = R.string.scan_photo, image = R.drawable.id_maker),
+        ToolsGridItem(id = 4, toolsText = R.string.scan_image_to_text, image = R.drawable.scan_book),
+        ToolsGridItem(id = 5, toolsText = R.string.scan_image_to_pdf, image = R.drawable.translate_text),
+        ToolsGridItem(id = 6, toolsText = R.string.scan_image_to_word, image = R.drawable.scan_qr_code),
+        ToolsGridItem(id = 3, toolsText = R.string.scan_image_to_excel, image = R.drawable.scan_sign),
+        ToolsGridItem(id = 4, toolsText = R.string.scan_qr_code, image = R.drawable.scan_book)
     ).toList()
 
-    val conversionList: List<ToolsGridItem> = listOf(
+    val conversionItemList: List<ToolsGridItem> = listOf(
         ToolsGridItem(id = 1, toolsText = R.string.pdf_to_doc, image = R.drawable.pdf_to_doc),
         ToolsGridItem(id = 2, toolsText = R.string.pdf_to_excel, image = R.drawable.pdf_to_excel),
         ToolsGridItem(id = 3, toolsText = R.string.pdf_to_image, image = R.drawable.pdf_to_image),
         ToolsGridItem(id = 4, toolsText = R.string.doc_to_pdf, image = R.drawable.doc_to_pdf),
         ToolsGridItem(id = 5, toolsText = R.string.excel_to_pdf, image = R.drawable.excel_to_pdf),
-        ToolsGridItem(id = 6, toolsText = R.string.watermark, image = R.drawable.watermark),
-        ToolsGridItem(id = 4, toolsText = R.string.merge_tools, image = R.drawable.merge_pdf),
-        ToolsGridItem(id = 5, toolsText = R.string.split_tools, image = R.drawable.split_pdf),
-        ToolsGridItem(id = 6, toolsText = R.string.page_reorder, image = R.drawable.pdf_page_reorder)
+        ToolsGridItem(id = 6, toolsText = R.string.image_to_pdf, image = R.drawable.watermark),
+        ToolsGridItem(id = 4, toolsText = R.string.image_to_word, image = R.drawable.merge_pdf),
+        ToolsGridItem(id = 5, toolsText = R.string.image_to_excel, image = R.drawable.split_pdf),
+        ToolsGridItem(id = 6, toolsText = R.string.image_to_text, image = R.drawable.pdf_page_reorder)
+    ).toList()
+
+    val editItemList: List<ToolsGridItem> = listOf(
+        ToolsGridItem(id = 1, toolsText = R.string.pdf_merge, image = R.drawable.pdf_to_doc),
+        ToolsGridItem(id = 2, toolsText = R.string.split_tools, image = R.drawable.pdf_to_excel),
+        ToolsGridItem(id = 3, toolsText = R.string.pdf_sign, image = R.drawable.pdf_to_image),
+        ToolsGridItem(id = 4, toolsText = R.string.pdf_watermark, image = R.drawable.doc_to_pdf),
+        ToolsGridItem(id = 5, toolsText = R.string.pdf_extract, image = R.drawable.excel_to_pdf),
+        ToolsGridItem(id = 6, toolsText = R.string.pdf_page_reorder, image = R.drawable.watermark),
+        ToolsGridItem(id = 4, toolsText = R.string.pdf_password, image = R.drawable.merge_pdf),
+        ToolsGridItem(id = 5, toolsText = R.string.pdf_unlock, image = R.drawable.split_pdf),
+        ToolsGridItem(id = 6, toolsText = R.string.rotate_pdf, image = R.drawable.pdf_page_reorder),
+        ToolsGridItem(id = 4, toolsText = R.string.edit_pdf, image = R.drawable.merge_pdf),
+        ToolsGridItem(id = 5, toolsText = R.string.edit_word, image = R.drawable.split_pdf),
+        ToolsGridItem(id = 6, toolsText = R.string.edit_excel, image = R.drawable.pdf_page_reorder)
     ).toList()
 
     Surface(
@@ -69,7 +85,7 @@ fun ToolsScreen(navController: NavHostController){
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top
         ) {
-            Text(text = stringResource(id = R.string.tools), style = TextStyle(
+            Text(text = stringResource(id = R.string.scan), style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = comfortaaFont,
                 fontWeight = FontWeight.Bold
@@ -79,13 +95,13 @@ fun ToolsScreen(navController: NavHostController){
                 columns = GridCells.Fixed(4),
                 contentPadding = PaddingValues(5.dp),
             ) {
-                items(toolsList) { data ->
+                items(scanItemList) { data ->
                     ToolsGridItemCard(data = data, navController = navController)
                 }
 
             }
             Spacer(modifier = Modifier.height(10.dp))
-            Text(text = stringResource(id = R.string.tools), style = TextStyle(
+            Text(text = stringResource(id = R.string.convert), style = TextStyle(
                 fontSize = 16.sp,
                 fontFamily = comfortaaFont,
                 fontWeight = FontWeight.Bold
@@ -95,7 +111,23 @@ fun ToolsScreen(navController: NavHostController){
                 columns = GridCells.Fixed(4),
                 contentPadding = PaddingValues(5.dp),
             ) {
-                items(conversionList) { data ->
+                items(conversionItemList) { data ->
+                    ToolsGridItemCard(data = data, navController = navController)
+                }
+
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+            Text(text = stringResource(id = R.string.edit), style = TextStyle(
+                fontSize = 16.sp,
+                fontFamily = comfortaaFont,
+                fontWeight = FontWeight.Bold
+            )
+            )
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(4),
+                contentPadding = PaddingValues(5.dp),
+            ) {
+                items(editItemList) { data ->
                     ToolsGridItemCard(data = data, navController = navController)
                 }
 

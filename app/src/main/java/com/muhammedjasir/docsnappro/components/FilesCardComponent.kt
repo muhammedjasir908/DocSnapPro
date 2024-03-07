@@ -36,7 +36,7 @@ fun FilesCardComponent(data: RecentFilesData, navController: NavController){
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 10.dp).background(color = Color.White).padding(vertical = 5.dp)
+            .padding(horizontal = 10.dp).background(color = Color.Transparent).padding(vertical = 5.dp)
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
