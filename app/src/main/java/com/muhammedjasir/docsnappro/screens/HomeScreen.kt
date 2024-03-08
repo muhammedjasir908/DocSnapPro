@@ -116,7 +116,7 @@ fun HomeScreen(navController: NavHostController){
                 contentPadding = PaddingValues(5.dp),
             ) {
                 items(toolsList) { data ->
-                    ToolsGridItemCard(data = data, navController = navController)
+                    ToolsGridItemCard(data = data)
                 }
 
             }

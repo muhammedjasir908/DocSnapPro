@@ -30,7 +30,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.muhammedjasir.docsnappro.R
 import com.muhammedjasir.docsnappro.ui.theme.comfortaaFont
@@ -38,6 +37,7 @@ import com.muhammedjasir.docsnappro.ui.theme.pinkGrey
 
 @Composable
 fun ToolsScreen(navController: NavHostController){
+
     val scanItemList: List<ToolsGridItem> = listOf(
         ToolsGridItem(id = 1, toolsText = R.string.scan_docs, image = R.drawable.scan_docs),
         ToolsGridItem(id = 2, toolsText = R.string.scan_photo, image = R.drawable.id_maker),
@@ -96,7 +96,7 @@ fun ToolsScreen(navController: NavHostController){
                 contentPadding = PaddingValues(5.dp),
             ) {
                 items(scanItemList) { data ->
-                    ToolsGridItemCard(data = data, navController = navController)
+                    ToolsGridItemCard(data = data)
                 }
 
             }
@@ -112,7 +112,7 @@ fun ToolsScreen(navController: NavHostController){
                 contentPadding = PaddingValues(5.dp),
             ) {
                 items(conversionItemList) { data ->
-                    ToolsGridItemCard(data = data, navController = navController)
+                    ToolsGridItemCard(data = data)
                 }
 
             }
@@ -128,7 +128,7 @@ fun ToolsScreen(navController: NavHostController){
                 contentPadding = PaddingValues(5.dp),
             ) {
                 items(editItemList) { data ->
-                    ToolsGridItemCard(data = data, navController = navController)
+                    ToolsGridItemCard(data = data)
                 }
 
             }
@@ -138,8 +138,7 @@ fun ToolsScreen(navController: NavHostController){
 
 @Composable
 fun ToolsGridItemCard(
-    data: ToolsGridItem,
-    navController: NavController
+    data: ToolsGridItem
 ){
     Column(
         modifier = Modifier.size(width = 70.dp, height = 100.dp),
